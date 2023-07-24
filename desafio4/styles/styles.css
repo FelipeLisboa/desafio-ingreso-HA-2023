@@ -1,0 +1,152 @@
+html {
+  background-color: rgb(173, 196, 173);
+}
+body {
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+}
+.contenedor {
+    align-content: center;
+    vertical-align: middle;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.div-subcontenedor1{
+    background-color: green;
+    width: 100%;
+    position:absolute;
+    margin-top: 20%;
+    top:0px;
+    left:0px;
+    z-index:10;
+}
+
+.div-subcontenedor2{
+    position:absolute;
+    top:0px;
+    margin-top: 30px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    left:0%;
+    z-index:5;
+}
+
+.div-select{
+    margin-left: 40%;
+    margin-top: 70px;
+    width: 20%;
+}
+
+.div-button-ingresar{
+    margin-left: 40%;
+    width: 20%;
+}
+
+.div-input{
+    margin-top: 40px;
+    margin-left: 40%;
+    width: 20%;
+}
+
+.div-table{
+    width: 100%;
+    height: auto;
+}
+
+.div-select-recursos2{
+    display: inline-block;
+    width: 20%;
+}
+
+.div-input-cantidad2{
+    display: inline-block;
+    width: 10%;
+}
+
+.div-label-medida2{
+    display: inline-block;
+    width: 7%;
+}
+
+.div-button-ingresar2{
+    display: inline-block;
+    width: 9%;
+    margin-right: 30px;
+}
+
+select{
+    border: none;
+    font-size: 14px;
+    width: 100%;
+}
+
+#input-cantidad{
+    display: none;
+    float: left;
+    width: 70%;
+}
+
+#label-medida{
+    display: none;
+    cursor: pointer;
+    float: right;
+    font: menu;
+    font-size: medium;
+}
+
+#button-ingresar{
+    display: none;
+    background-color: lightgreen;
+    float: right;    
+}
+
+#select-recursos2{
+    width: 100%;
+    display: none;
+}
+
+#input-cantidad2{
+    width: 100%;
+    display: none;
+}
+
+#label-medida2{
+    width: 100%;
+    display: none;
+    cursor: pointer;
+    float: right;
+    font: menu;
+    font-size: medium;
+}
+
+#button-ingresar2{
+    margin-top: 30px;
+    display: none;
+    width: 100%;
+    background-color: lightgreen;
+    float: right;    
+}
+
+#btn-eliminar{
+    background: url(../img/trash.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0;
+    width: 40px;
+    height: 40px;
+}
+
+#table{
+    display: none;
+    margin-top: 10%;
+    top: 100px;
+    width: 100%;
+    height: auto;
+    text-align: center;
+}

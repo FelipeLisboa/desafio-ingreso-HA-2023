@@ -1,0 +1,10 @@
+1.- SELECT nombre, altura, fecha FROM titanes t INNER JOIN muertes m WHERE m.causa = "Accidente" ORDER BY m.fecha 
+2.- SELECT nombre, altura FROM titanes t INNER JOIN muertes m WHERE m.causa = "Batallón 1" AND t.altura = (SELECT MAX(altura) FROM titanes)
+3.- SELECT nombre, altura FROM titanes t INNER JOIN avistamientos a WHERE NOT EXISTS (SELECT null FROM muertes m WHERE m.id_titan = t.id) ORDER BY a.fecha, t.altura ASC
+4.- SELECT nombre, year(fecha), id_titan, COUNT(*) FROM avistamientos INNER JOIN titanes on avistamientos.id_titan = titanes.id GROUP BY year(fecha), id_titan HAVING COUNT(*) > 1 ORDER BY titanes.nombre ASC
+5.- SELECT recursos.nombre, movimientos_recursos.cantidad, recursos.unidad from recursos INNER JOIN movimientos_recursos ON recursos.id = movimientos_recursos.id_recurso INNER JOIN muertes ON movimientos_recursos.id_muerte = muertes.id INNER JOIN titanes ON muertes.id_titan = titanes.id WHERE titanes.altura <= 5 GROUP BY recursos.nombre ORDER BY movimientos_recursos.cantidad
+6.- SELECT recursos.nombre as nombre, count(recursos.nombre) FROM recursos INNER JOIN movimientos_recursos ON recursos.id = movimientos_recursos.id_recurso INNER JOIN muertes ON movimientos_recursos.id_muerte = muertes.id INNER JOIN titanes ON muertes.id_titan = titanes.id WHERE titanes.altura > 9 GROUP BY nombre ORDER BY recursos.nombre DESC, movimientos_recursos.cantidad DESC
+7.- SELECT nombre, avistamientos.fecha as fecha_avistamiento, muertes.fecha as fecha_muerte FROM titanes INNER JOIN muertes ON titanes.id = muertes.id_titan INNER JOIN avistamientos ON titanes.id = avistamientos.id_titan WHERE avistamientos.fecha > muertes.fecha ORDER BY titanes.id
+8.- La incongruencia de los datos de los avistamientos / muertes de titanes se puede producir por errores de ingreso de datos, como por ejemplo, que se haya ingresdada una muerte con un ID_TITAN erróneo, que el avistamiento haya sido ingresado con un ID_TITAN erróneo, que la muerte haya sido registrada con un ID_TITAN y luego se registró tarde el avistamiento con ese mismo ID_TITAN
+
+
